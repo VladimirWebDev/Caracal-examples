@@ -3,11 +3,13 @@
  * Site Name
  *
  * Copyright (c) 2017. by Way2CU, http://way2cu.com
- * Authors: 
+ * Authors:
  */
 
 @color_background: white;
 @color_text: #333333;
+
+@color_blue: #00B5C1;
 
 @section_spacing: 4rem;
 @header_spacing: 1rem;
@@ -15,3 +17,106 @@
 @button_padding: 0.5rem 1rem;
 @input_padding: 0.5rem;
 @finger_size: 2.5rem;
+
+
+// mixin for headings of sections
+.main-section-heading(@color: @font-color, @font-size: @set-size) {
+	color: @color;
+	display: block;
+	font-size: @font-size;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.example-holder-div() {
+	border: 1px solid lighten(@color_text, 30%);
+	border-radius: 3px;
+	display: block;
+	margin: 1rem auto;
+	padding: @finger_size @paragraph_spacing;
+	width: 80%;
+}
+
+.article-simple() {
+	padding: @paragraph_spacing;
+	text-align: center;
+}
+
+.inline-article() {
+	display: inline-block;
+	width: 50%;
+}
+
+.regular-button(@color: @button_color, @text-color: @color) {
+	background-color: @color;
+	border-radius: 5px;
+	border: transparent;
+	box-sizing: border-box;
+	color: @text-color;
+	display: inline-block;
+	padding: @paragraph_spacing @finger_size;
+	text-decoration: none;
+
+	&:hover {
+		box-shadow: 0px 0px 2px 1px darken(@color_blue, 20%);
+	}
+
+	&:active {
+		box-shadow: 0px 0px 2px 1px darken(@color_blue, 20%);
+	}
+}
+
+.horizontal-form() {
+	display: block;
+	width: 90%;
+	margin: @paragraph_spacing auto;
+	margin-top: 5rem;
+	padding: 1rem;
+
+	label {
+		display: inline-block;
+		width: 27%;
+
+		span {
+			width: 25%;
+			display: inline-block;
+		}
+
+		input {
+			width: 75%;
+			display: inline-block;
+			padding: 0.5rem 0.5rem;
+			box-sizing: border-box;
+
+			&:hover {
+				border: 1px solid @color_blue;
+			}
+
+			&:focus {
+				border: 1px solid @color_blue;
+			}
+		}
+	}
+
+	div.controls {
+		display: inline-block;
+		margin-left: 1rem;
+
+		button{
+			.regular-button(@color_blue, @color_background);
+			padding-top: 0.6rem;
+			padding-bottom: 0.6rem;
+
+			&:hover {
+				box-shadow: 0px 0px 2px 1px darken(@color_blue, 20%);
+			}
+
+			&:active {
+				box-shadow: 0px 0px 2px 1px darken(@color_blue, 20%);
+			}
+		}
+	}
+}
+
+.vertical-form(@label_top: @label_position) {}

@@ -1,0 +1,41 @@
+/**
+ * Content style sheet
+ * Caracal examples
+ *
+ * Copyright (c) 2017. by Way2CU, http://way2cu.com
+ * Authors:	Vladimir Anusic
+ */
+
+section#heading_examples {
+	padding: @section_spacing calc(~'(100% - 1200px)' / 2);
+
+	> h1 {
+		.main-section-heading(@color_text, 4rem);
+	}
+
+	h3 {
+		margin-left: 6.5rem;
+	}
+
+	> div {
+			.example-holder-div();
+			text-align: center;
+
+		article {
+			.article-simple();
+		}
+
+		form {
+			.horizontal-form();
+		}
+
+		&:nth-of-type(3) > div {
+			.inline-article();
+		}
+	}
+
+	a {
+		.regular-button(@color_blue, @color_background);
+	}
+
+}

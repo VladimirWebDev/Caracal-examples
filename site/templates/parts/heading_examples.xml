@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<h3><cms:raw text="$params['text_id'].' example'" cms:eval="text"/></h3>
+	<div>
+		<div>
+			<h1><cms:var param="title" multilanguage="yes"/></h1>
+			<cms:markdown param="content" multilanguage="yes"/>
+			<a href="#">Button</a>
+		</div>
+
+		<div>
+			<cms:module
+				name="gallery"
+				action="show_image"
+				text_id="$params['text_id']"
+				cms:eval="text_id"
+				/>
+		</div>
+
+		<cms:if condition="isset($template['form'])">
+			<cms:module
+				name="contact_form"
+				action="show"
+				text_id="contact_form"
+				/>
+		</cms:if>
+	</div>
+</document>
