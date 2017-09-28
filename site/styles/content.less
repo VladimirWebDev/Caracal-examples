@@ -31,6 +31,25 @@ section#heading_examples {
 
 		&:nth-of-type(3) > div {
 			.inline-article();
+
+			&:empty {
+				display: none;
+			}
+		}
+
+		&:nth-of-type(4) {
+
+			> div {
+				.inline-article();
+
+				&:empty {
+					display: none;
+				}
+			}
+
+			form {
+				.vertical-form(false);
+			}
 		}
 	}
 
