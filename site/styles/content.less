@@ -51,10 +51,32 @@ section#heading_examples {
 				.vertical-form(false);
 			}
 		}
+
+		&:nth-of-type(5) {
+
+			> div {
+				.inline-article();
+
+				&:empty {
+					display: none;
+				}
+			}
+
+			form {
+				.vertical-form(true);
+			}
+		}
 	}
 
 	a {
 		.regular-button(@color_blue, @color_background);
 	}
 
+}
+
+section#articles_examples {
+
+	> h1 {
+		.main-section-heading(@color_text, 4rem);
+	}
 }

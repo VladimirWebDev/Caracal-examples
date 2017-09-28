@@ -20,7 +20,7 @@
 
 
 // mixin for headings of sections
-.main-section-heading(@color: @font-color, @font-size: @set-size) {
+.main-section-heading(@color; @font-size;) {
 	color: @color;
 	display: block;
 	font-size: @font-size;
@@ -49,7 +49,7 @@
 	width: 50%;
 }
 
-.regular-button(@color: @button_color, @text-color: @color) {
+.regular-button(@color; @text-color;) {
 	background-color: @color;
 	border-radius: 5px;
 	border: transparent;
@@ -120,14 +120,41 @@
 	}
 }
 
+// vetically displayed contact form with option for input labels to be displayed top or inline
 .vertical-form(@label_top) {
 	display: inline-block;
 	width: 45%;
 	margin: 0;
-	padding: 1rem;
+	padding: 1.5rem;
 	vertical-align: middle;
 
-	label {
+	label when (@label_top = true) {
+		display: block;
+		width: 100%;
+		padding-bottom: 1rem;
+
+		span {
+			width: 15%;
+			display: block;
+		}
+
+		input {
+			width: 100%;
+			display: inline-block;
+			padding: 0.5rem 0.5rem;
+			box-sizing: border-box;
+
+			&:hover {
+				border: 1px solid @color_blue;
+			}
+
+			&:focus {
+				border: 1px solid @color_blue;
+			}
+		}
+	}
+
+	label when (@label_top = false) {
 		display: block;
 		width: 100%;
 		padding-bottom: 1rem;
